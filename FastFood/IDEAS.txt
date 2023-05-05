@@ -1,0 +1,44 @@
+RESTAURANT
+	- First, read through notes again to find design ideas
+		- Decorator Pattern: Pizza
+		- Factory Method: drink (and maybe pizza) sizes, sushi roll, etc.
+		- "Has a" : aggregation (the menu 'has a' pizza)
+		- All items inherit from superclass Item (see chess superclass Piece)
+			- It'll have a name, lone price field
+			- Maybe have categories inheriting from Item (ex. Drinks, Main (will have combo price field), Sides)
+				- Make all these pure abstract (via constructor)
+		- MVC
+			- Model: Menu itself
+			- View: how we print it
+			- Controller: ordering
+		- Lone price, combo price
+		- Store order in a vector?
+		- Have class for each object, and store (const?) objects for the menu in a vector
+			- Output operator overload to display items on a menu 
+			- Start with Pizza (using decorator)'=
+			- Might need Big 5, later on down the line (ex. Reorder last meal)
+			- 
+		- Extra Features
+			- Include promotions based on current day!
+			- Static fields for total orders or inventory?
+			- Create a STL map that stores people's last orders
+			- RAII
+			- Show a vegan-only menu
+	- Draw UML
+		- MVC
+			- Model: Menu
+				- Owns a view
+				- private vector for menu(?)
+			- View: TextView
+				- simply has a print function which takes in a menu and prints it
+				- Maybe a print vegan option which takes in a menu and only prints items with vegan TRUE field
+			- Controller: Controls the experience
+				- (maybe own a menu, or just pass it in'n'out of functions)
+				- methods for order, pay, enter restaurant
+		- Item class (see piece class)
+			- Fields: name, lonePrice, vegan
+		- Main: Instantiate controller and call its 'run' function
+			Pass it cin and cout
+	- Setup VSCode
+	- Start Git project:
+		- Upload to GitHub, then work on it using branches...
